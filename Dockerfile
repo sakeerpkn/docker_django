@@ -1,12 +1,12 @@
 FROM sakeer/ubuntu:version-3
-FROM mysql
+FROM sakeer/mysql_connection_django:latest
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-RUN apt-get update && apt-get install -y \
-  python \
-  python-dev \
-  python-pip \
-  python-virtualenv && \
-  rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#  python \
+#  python-dev \
+#  python-pip \
+#  python-virtualenv && \
+#  rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /docker_django
